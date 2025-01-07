@@ -1,0 +1,837 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing:border-box ;
+}
+
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #dadada;
+}
+
+#main{
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    /* overflow: scroll; */
+}
+
+[data-scroll-container]{
+    overflow: scroll;
+}
+
+#loader{
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index:9999;
+    background-color: #222;
+    color: #fff;
+}
+
+#loader #topheading{
+    
+    position: absolute;
+    top: 5%;
+    left:50%;
+    transform: translate(-50%,0);
+
+}
+
+#topheading h5{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight:300 ;
+}
+
+#loader h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4vw;
+    font-weight: 400;
+
+}
+
+#loader h1 span{
+    font-family: cursive;
+    color: #fff;
+}
+
+.reveal .parent{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.reveal .parent .child{
+    display: block;
+}
+
+.parent .child .span{
+    display: inline-block;
+}
+
+#purple{
+    /* display: none; */
+    position: absolute;
+    top:100%;
+    width: 100%;
+    height: 0vh;
+    z-index: 999;
+    background-color: #7209b7;
+}
+
+#white{
+    width: 100%;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: #dadada;
+}
+
+h1{
+    color: black;
+}
+
+#home{
+    width: 100%;
+    height: 150vh;
+    background-color: #dadada;
+}
+
+#home #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 5vw;
+    width:100% ;
+    height: 100px;
+
+}
+
+#nav a{
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 14px;
+    color:black
+}
+
+#nav a .line{
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    width:0%;
+    height: 1px;
+    background-color: #222;
+}
+
+#line1{
+    left: 0;
+    width: 0%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s ;
+    transition-delay: .1s;
+}
+
+#line2{
+    right: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s ;
+    width: 100%;
+}
+#nav a:hover #line2{
+    width:0%;
+}
+
+#nav a:hover #line1{
+    width:100%;
+}
+
+.row{
+    margin-top: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #222;
+    padding: 0 3vw;
+    line-height: 1.2;
+    padding-right: 12vw;
+}
+
+.row h1{
+    font-size:15vw ;
+    font-weight: 500;
+}
+
+.row .text{
+    margin-top: 0vw;
+}
+
+.row h5{
+    opacity: .4;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.row:nth-child(3){
+margin-top: 0;
+}
+
+
+.row svg{
+    height: 150px;
+    margin: 0 4vw;
+}
+
+.combo h2{
+    opacity: .5;
+    font-size: 4.2vw;
+    font-weight: 300;
+    color: #7209b7;
+}
+
+#imagery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10vw;
+    width:100%;
+    padding: 0 6vw;
+}
+
+#imagery #imgleft{
+    width:40%;
+    height: 50vh;
+   
+}
+
+#imgleft h1{
+    font-size: 2vw;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #222;
+}
+
+#imgleft h1 span{
+color: #7209b7;
+font-family: cursive;
+font-weight: 500;
+font-style: italic;
+}
+
+#imgright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width:60%;
+    height:auto;
+}
+
+#imgright .imgcontainer{
+    margin-bottom: 8vw;
+    position: absolute;
+    width: 20vw;
+    height: 25vw;
+    border-radius: 1vw;
+    filter: grayscale();
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+#imgright .imgcontainer:hover{
+    filter: grayscale(0);
+}
+
+#imgright .imgcontainer:nth-child(1){
+    transform: translate(-40%, -8%) rotate(-20deg);
+    background-image: url('./assests/p1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#imgright .imgcontainer:nth-child(2){
+    transform: translate(-15%,0%) rotate(-15deg);
+    background-image: url('./assests/lily.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#imgright .imgcontainer:nth-child(3){
+    transform:translate(20%,10%) rotate(-5deg);
+    background-image: url('./assests/me.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+#work {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-color: #f1f1f1;
+}
+
+#work .work1 {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Matches the pseudo-element height */
+}
+
+#work .work1::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    height: 100px;
+    transform: rotate(-180deg);
+    background-image: url(https://abhishekjha.me/rip.f6d7c4dd.svg);
+    background-size: cover;
+    
+}
+
+.me {
+    text-align: center; /* Centers content */
+    margin-top: 50px; /* Adjust this to push content down */
+}
+
+.me h3 {
+    color: #757171;
+    font-size: 1.5vw;
+    margin-top: 1vh; /* Creates consistent spacing */
+}
+
+.me hr {
+    height: 1px;
+    width: 80%;
+    border-width: 0;
+    color: gray;
+    background-color: gray;
+    margin: 20px auto; /* Adds spacing above and centers */
+}
+
+#work .workrow{
+    padding: 0 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.workrow h1{
+    font-size: 7vw;
+    font-weight: 600;
+}
+
+
+.workrow h1 span{
+    color: #7209b7;
+    font-style: italic;
+}
+
+/* #images{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 6vw;
+    position: relative;
+    width: 100%;
+    padding: 0 5vw;
+} */
+
+.cnt{
+    overflow: hidden;
+    border-radius: 50px;
+
+}
+
+.cnt img{
+    transition: filter cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    width: 105%;
+}
+
+.cnt1{
+    width: 55%;
+}
+
+.cnt2{
+    width: 25%;
+}
+
+
+#images {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; 
+    align-items: center;
+}
+
+/* Rows */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Space between circles */
+    position: relative;
+}
+
+/* Circles (Project Cards) */
+.circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    overflow: visible;
+    box-shadow: 0 6px 15px rgba(212, 66, 212, 0.822);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.circle:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Images inside circles */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Curved String */
+.string {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: none;
+    border-top: 2px solid #dcdcdc;
+    border-radius: 50%;
+    z-index: -1; /* Send to the back */
+    transform: translateY(100px); /* Adjust curve position */
+}
+
+/* Adjust curve for odd rows */
+.row:nth-child(odd) .string {
+    transform: translateY(60px);
+}
+
+
+/* body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} */
+
+#orbit-projects {
+    width: 90%;
+    /* max-width: 1200px; */
+    display: flex;
+    margin-left: 13vh;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+}
+
+.orbit-row {
+    /* margin-left: 5vh; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.row-1 {
+    transform: rotate(0deg);
+}
+
+.row-2 {
+    transform: rotate(0deg);
+}
+
+.project-card {
+    width: calc(25% - 15px); /* Adjust width for 2 in a row */
+    border-radius: 20%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(226, 69, 218, 0.897);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row-2 .project-card {
+    width: calc(25% - 20px); /* Adjust width for 3 in a row */
+}
+
+.project-card:hover {
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 8px 20px rgba(226, 69, 218, 0.897);
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* .project-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+} */
+
+/* Orbital Spacing */
+.row-1 .project-card:nth-child(1) {
+    transform: translateY(20px);
+}
+
+.row-1 .project-card:nth-child(2) {
+    transform: translateY(20px);
+}
+
+.row-2 .project-card:nth-child(1) {
+    transform: translateY(10px);
+}
+
+.row-2 .project-card:nth-child(2) {
+    transform: translateY(-100px);
+}
+
+.row-2 .project-card:nth-child(3) {
+    transform: translateY(10px);
+}
+
+.project-card:hover img {
+    filter: brightness(80%); /* Darken the image slightly */
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: #ff6347; /* Change text color on hover */
+    background-color: rgba(255, 255, 255, 0.8); /* Add a light background */
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6); /* Optional: adds contrast behind the text */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover .project-name {
+    opacity: 1;
+}
+
+
+
+
+#contact {
+    margin-top: 5vh;
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.email-link, .discuss-link {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.email-link {
+    background-color: #dadada;
+    color: #7209b7;
+    border: 2px solid #7209b7;
+}
+
+.email-link:hover {
+    background-color: #7209b7;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.discuss-link {
+    background-color: white;
+    color: #7209b7;
+    border: 2px solid #7209b7;
+}
+
+.discuss-link:hover {
+    background-color: #dadada;
+    color: #222;
+    transform: translateY(-2px);
+}
+
+#contact h2 span{
+    color: #7209b7;
+    font-family: cursive;
+    font-size: 5.5rem;
+    font-weight: 600;
+
+}
+
+#contact p{
+    font-size: 2.5rem;
+}
+
+
+
+/* queries */
+
+@media screen and (max-width: 1200px) {
+    .row h1 {
+        font-size: 13vw;
+    }
+    
+    .combo h2 {
+        font-size: 3.8vw;
+    }
+    
+    #imgleft h1 {
+        font-size: 2.5vw;
+    }
+    
+    .workrow h1 {
+        font-size: 6vw;
+    }
+
+    #orbit-projects {
+        margin-left: 5vh;
+    }
+    
+    .project-card {
+        width: calc(33% - 15px);
+    }
+}
+
+/* Medium devices (tablets) */
+@media screen and (max-width: 768px) {
+    #loader h1 {
+        font-size: 6vw;
+    }
+    
+    .row {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 4vw;
+    }
+    
+    .row h1 {
+        font-size: 15vw;
+    }
+    
+    .combo h2 {
+        font-size: 5vw;
+    }
+    
+    #imagery {
+        flex-direction: column;
+        margin-top: 15vw;
+    }
+    
+    #imgleft {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5vh;
+    }
+    
+    #imgleft h1 {
+        font-size: 4vw;
+    }
+    
+    #imgright {
+        width: 100%;
+        height: 60vh;
+    }
+    
+    #imgright .imgcontainer {
+        width: 30vw;
+        height: 35vw;
+    }
+    
+    .orbit-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .project-card {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .row-1, .row-2 {
+        transform: none;
+    }
+    
+    #orbit-projects {
+        margin-left: 0;
+    }
+}
+
+/* Small devices (phones) */
+@media screen and (max-width: 480px) {
+    #loader h1 {
+        font-size: 7vw;
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .row h1 {
+        font-size: 18vw;
+    }
+    
+    .combo h2 {
+        font-size: 6vw;
+    }
+    
+    #imgleft h1 {
+        font-size: 5vw;
+    }
+    
+    #imgright .imgcontainer {
+        width: 40vw;
+        height: 45vw;
+    }
+    
+    .project-card {
+        width: 90%;
+    }
+    
+    #contact h2 {
+        font-size: 2rem;
+    }
+    
+    #contact h2 span {
+        font-size: 3rem;
+    }
+    
+    #contact p {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+    
+    .email-link, .discuss-link {
+        display: block;
+        margin: 20px auto;
+        width: 80%;
+    }
+}
+
+/* Fix for image containers on all devices */
+#imgright .imgcontainer:nth-child(1) {
+    transform: translate(-40%, -8%) rotate(-20deg);
+    z-index: 1;
+}
+
+#imgright .imgcontainer:nth-child(2) {
+    transform: translate(-15%, 0%) rotate(-15deg);
+    z-index: 2;
+}
+
+#imgright .imgcontainer:nth-child(3) {
+    transform: translate(20%, 10%) rotate(-5deg);
+    z-index: 3;
+}
+
+/* Ensure smooth transitions */
+.imgcontainer, .project-card, .email-link, .discuss-link {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Maintain aspect ratio for project images */
+.project-card img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* Fix for locomotive scroll on mobile */
+@media (hover: none) and (pointer: coarse) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    [data-scroll-container] {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+
+
+
+
+
+
+
+
